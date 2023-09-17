@@ -11,6 +11,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/student")
+@CrossOrigin
 public class StudentController {
     @Autowired
    private  StudentService  studentService;
@@ -35,7 +36,7 @@ public class StudentController {
 
     }
     //Yet to implement
-    @DeleteMapping("/getStudent/{id}")
+    @DeleteMapping("/delete/{id}")
     public String deleteStudent(@PathVariable int id){
         if(studentService.getStudentInfo(id)==null){
             throw new ResponseStatusException(HttpStatus.NO_CONTENT);
